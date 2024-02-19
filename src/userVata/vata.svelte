@@ -151,7 +151,7 @@
 		</div>
 
         <div class="mt-5 bg-white  p-5 rounded-2xl">
-            <form method="POST" class="flec-col space-y-2" enctype="multipart/form-data">
+            <form method="POST" action="?/vataboi" class="flec-col space-y-2" enctype="multipart/form-data">
 
 
                 <div class="flex">
@@ -185,7 +185,7 @@
                 </div>
 				<div class="coolinput" style="display: none;" id="mis">
                     <label for="input" class="text">মুক্তিযুদ্ধ পরিচিতি নাম্বার</label>
-                    <input type="text" placeholder="আপনার মুক্তিযুদ্ধ পরিচিতি নাম্বার (MIS)" name="input" class="input">
+                    <input type="text" placeholder="আপনার মুক্তিযুদ্ধ পরিচিতি নাম্বার (MIS)" name="mis" class="input">
                 </div>
 
                 <label for="file" class="custum-file-upload">
@@ -200,14 +200,14 @@
 
 
 
-                    <button class="applyBtn">
+                    <div class="applyBtn">
                         <span class="circle1"></span>
                         <span class="circle2"></span>
                         <span class="circle3"></span>
                         <span class="circle4"></span>
                         <span class="circle5"></span>
-                        <span class="text">আবেদন নিশ্চিত</span>
-                    </button>
+                        <input type="submit" class="w-fit bg-transparent" value="আবেদন নিশ্চিত" >
+					</div>
             </form>
         </div>
 
