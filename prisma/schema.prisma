@@ -11,11 +11,23 @@ datasource db {
 }
 
 model users {
-  name String
-  number String @id
-  pressent_address String
+  name              String
+  number            String    @id
+  pressent_address  String
   permanent_address String
-  nid String @unique
-  password String 
+  nid               String    @unique
+  password          String
+  gender            String    @default("male")
+  bdate             String    @default("0000-00-00")
+  vataboi           vataboi[]
 }
 
+model vataboi {
+  vataid  String @id
+  user_id String @default("null")
+  pics String?
+  autism_type String?
+  autism_limit String?
+  mis_number String?
+  users   users  @relation(fields: [user_id], references: [number], onDelete: Cascade)
+}

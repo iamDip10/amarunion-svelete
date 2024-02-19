@@ -1,6 +1,8 @@
 <script>
 	import darain from '../img/darain.jpg';
 	import Chart from './chart.svelte';
+
+	export let data;
 </script>
 
 <div class="col-span-7 mt-9">
@@ -8,7 +10,7 @@
 		<div class="  w-full">
 			<h1 class="text-sm">স্বাগতম,</h1>
 			<h1 class="text-4xl font-bold  uppercase" >
-				মোহাম্মাদ দারাইন খান
+				{data.user.name}
 			</h1>
 		</div>
 
@@ -134,7 +136,7 @@
 			</div>
 		</div>
 
-		<div class="mt-8 flex space-x-5 ">
+		<!-- <div class="mt-8 flex space-x-5 ">
 			<div class="bg-white p-5 w-2/3 rounded-xl shadow-xl grid bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 text-white">
 				<h1 class="text-xs">পরবর্তী র‍্যাশন তারিখ</h1>
 
@@ -149,7 +151,7 @@
 					>বিস্তারিত জানুন</a
 				>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="mt-8 flex space-x-5 h-1/2">
 			<div class="bg-white p-5 w-1/4 rounded-xl shadow-xl">
