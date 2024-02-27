@@ -1,7 +1,8 @@
 <script>
-	import darain from '../img/darain.jpg';
+	//import darain from '../img/darain.jpg';
 	
 	export let data;
+	const picc = '/src/img/'.concat(data.user.prof_pic) ;
 
 </script>
 
@@ -33,7 +34,7 @@
 			</div>
 
 			<button class=" rounded-full">
-				<img src={darain} alt="" class="aspect-square object-cover w-11 rounded-full" />
+				<img src={picc} alt="" class="aspect-square object-cover w-11 rounded-full" />
 			</button>
 		</div>
 	</div>
@@ -151,31 +152,31 @@
 		</div>
 
         <div class="mt-5 bg-white  p-5 rounded-2xl">
-            <form method="POST" action="?/vataboi" class="flec-col space-y-2" enctype="multipart/form-data">
+            <form method="POST" class="flec-col space-y-2" enctype="multipart/form-data">
 
 
                 <div class="flex">
                     <div class="coolinput w-1/2">
-                        <label for="input" class="text">আপনার নাম</label>
-                        <input type="text" placeholder='{data.user.name}' value="{data.user.name}" name="name" disabled class="input">
+                        <label for="name" class="text">আপনার নাম</label>
+                        <input type="text" id="name" placeholder='{data.user.name}' value={data.user.name} name="name" readonly class="input">
                     </div>
                     
 
                     <div class="coolinput w-1/2">
-                        <label for="input" class="text">মোবাইলঃ</label>
-                        <input type="text" placeholder='{data.user.number}' value="{data.user.number}"  name="mobile" class="input" disabled>
+                        <label for="mobilee" class="text">মোবাইলঃ</label>
+                        <input type="text" id="mobilee" placeholder='{data.user.number}' value={data.user.number} name="mobile" readonly class="input" >
                     </div>
                     
                 </div>
                 <div class="coolinput ">
-                    <label for="input" class="text">আপনার ঠিকানাঃ</label>
-                    <input type="text" placeholder="{data.user.pressent_address}" value="{data.user.pressent_address}" name="pres_add" disabled class="input">
+                    <label for="add" class="text">আপনার ঠিকানাঃ</label>
+                    <input type="text" id="add" placeholder="{data.user.pressent_address}" value={data.user.pressent_address} name="pres_add" readonly class="input">
                 </div>
                 <div class="coolinput ">
-                    <label for="input" class="text">ভাতা টাইপ</label>
+                    <label for="vataSelect" class="text">ভাতা টাইপ</label>
        
 
-                    <select name="vatatype" class="input border-2 border-[#818CF8] p-2 rounded-lg" id="vataSelect" onclick="changin()" >
+                    <select name="vatatype" class="input border-2 border-[#818CF8] p-2 rounded-lg" id="vataSelect" onclick="changin()" required>
                         <option value="null">ভাতার ধরণ নির্বাচন করুন</option>
                         <option value="old">বয়স্ক ভাতা</option>
                         <option value="fighter">মুক্তিযোদ্ধা ভাতা</option>
@@ -184,9 +185,48 @@
                     </select>
                 </div>
 				<div class="coolinput" style="display: none;" id="mis">
-                    <label for="input" class="text">মুক্তিযুদ্ধ পরিচিতি নাম্বার</label>
-                    <input type="text" placeholder="আপনার মুক্তিযুদ্ধ পরিচিতি নাম্বার (MIS)" name="mis" class="input">
+                    <label for="miss" class="text">মুক্তিযুদ্ধ পরিচিতি নাম্বার</label>
+                    <input type="text" id="miss" placeholder="আপনার মুক্তিযুদ্ধ পরিচিতি নাম্বার (MIS)" name="mis" class="input">
                 </div>
+				<div style="display: none;" class="flex-col px-3" id="proti">
+                    <label for="miss" class="text">প্রতিবন্ধীর ধরনঃ</label>
+                    <div class="w-full h-10 mt-1 flex flex-row justify-between">
+						<div class="w-20 ">
+
+							<input type="checkbox" value="autism" id="auti">
+							<label for="auti">অটিজম</label>
+						</div>
+						<div class="w-20 ">
+
+							<input type="checkbox" value="physical" id="auti">
+							<label for="auti">শারীরিক</label>
+						</div>
+						<div class="w-52 ">
+
+							<input type="checkbox" value="autism" id="auti">
+							<label for="auti">দীর্ঘস্থায়ী মানসিক অসুস্থাতা</label>
+						</div>
+						<div class="w-20 ">
+
+							<input type="checkbox" value="autism" id="auti">
+							<label for="auti">দৃষ্টি</label>
+						</div>
+						<div class="w-20 ">
+
+							<input type="checkbox" value="autism" id="auti">
+							<label for="auti">বুদ্ধি</label>
+						</div>
+						<div class="w-20 ">
+
+							<input type="checkbox" value="autism" id="auti">
+							<label for="auti">শ্রবন</label>
+						</div>
+					</div>
+                </div>
+				<!-- <div class="coolinput" style="display: none;" id="mis">
+                    <label for="miss" class="text">মুক্তিযুদ্ধ পরিচিতি নাম্বার</label>
+                    <input type="text" id="miss" placeholder="আপনার মুক্তিযুদ্ধ পরিচিতি নাম্বার (MIS)" name="mis" class="input">
+                </div> -->
 
                 <label for="file" class="custum-file-upload">
                     <div class="icon">
@@ -195,18 +235,16 @@
                     <div class="text">
                        <span id="msg">ভাতা ধরন নির্বাচন করুন</span>
                        </div>
-                       <input id="file" type="file" multiple>
+                       <input id="file" name="filee" type="file" multiple>
                     </label>
 
-
-
                     <div class="applyBtn">
-                        <span class="circle1"></span>
+                        <!-- <span class="circle1"></span>
                         <span class="circle2"></span>
                         <span class="circle3"></span>
                         <span class="circle4"></span>
-                        <span class="circle5"></span>
-                        <input type="submit" class="w-fit bg-transparent" value="আবেদন নিশ্চিত" >
+                        <span class="circle5"></span> -->
+                        <input type="submit" class="w-full" value="আবেদন নিশ্চিত" >
 					</div>
             </form>
         </div>
@@ -216,16 +254,27 @@
 
 	<script>
 
+		function showme() {
+			alert(document.getElementById('file').value) ;
+		}
 		function changin() {
 
 			let dc = document.getElementById("vataSelect") ;
 
 			if (dc.value == "null") {
 				document.getElementById('mis').style.display = "none" ;
+				document.getElementById('proti').style.display = "none" ;
 			}
 			if (dc.value == "fighter") {
 				document.getElementById('msg').innerText = "মুক্তিযুদ্ধ সার্টিফিকেট এর ছবি সংযুক্ত করুন";
+				document.getElementById('proti').style.display = "none" ;
 				document.getElementById('mis').style.display = "flex" ;
+			}
+
+			if (dc.value == "autism") {
+				document.getElementById('proti').style.display = "flex" ;
+				document.getElementById('mis').style.display = "none" ;
+				document.getElementById('msg').innerText = "আপনার শারীরিক অবস্থার ছবি তুলে সংযুক্ত করুন";
 			}
 		}
 	</script>

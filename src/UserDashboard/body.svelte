@@ -1,8 +1,8 @@
 <script>
-	import darain from '../img/darain.jpg';
 	import Chart from './chart.svelte';
-
+	
 	export let data;
+	const proPic = "/src/img/".concat(data.user.prof_pic);
 </script>
 
 <div class="col-span-7 mt-9">
@@ -33,7 +33,7 @@
 			</div>
 
 			<button class=" rounded-full">
-				<img src={darain} alt="" class="aspect-square object-cover w-11 rounded-full" />
+				<img src={proPic} alt="" class="aspect-square object-cover w-11 rounded-full" />
 			</button>
 		</div>
 	</div>
@@ -41,7 +41,7 @@
 	<div class="w-full h-[52rem] overflow-scroll">
 		<div class="mt-20 flex space-x-5">
 			<div class="bg-white p-3 w-1/2 rounded-xl shadow-xl">
-				<h1 class="text-xs">প্রোফাইল সিকিউরিটি স্ট্যাটাস</h1>
+				<h1 class="text-xs">প্রোফাইল স্ট্যাটাস</h1>
 
 				<div class="mt-2">
 					<div class="flex">
@@ -61,45 +61,18 @@
 						<h1 class="ml-2">আপনার পাসওয়ার্ড স্ট্রং</h1>
 					</div>
 
-					<div class="flex">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 24 24"
-							fill="currentColor"
-							class="w-6 h-6 text-lime-500"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-						<h1 class="ml-2">অথেন্টিকেশন কোড অন আছে</h1>
-					</div>
 
-					<div class="flex">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 24 24"
-							fill="currentColor"
-							class="w-6 h-6 text-lime-500"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-
-						<h1 class="ml-2">সিকিউরিটি ফিচার্স অন আছে</h1>
-					</div>
+					
 				</div>
 			</div>
 
-			<div class="bg-white p-3 w-1/2 rounded-xl shadow-xl grid items-center">
+			<div class="bg-white p-3 w-1/2 h-32 rounded-xl shadow-xl ">
 				<h1 class="text-xs">আপনার ভাতাসমূহ</h1>
 
 				<div class="mt-2">
+					<!-- {#each data.user.vataboi as boi} 
+					{#if boi.type === 'fighter'} -->
+						
 					<div class="flex">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -114,44 +87,20 @@
 							/>
 						</svg>
 
+						
 						<h1 class="ml-2">মুক্তিযোদ্ধা ভাতা</h1>
 					</div>
+					
+					<!-- {:else if boi.type === 'auti'}
+					<h1 class="ml-2">প্রতিবন্ধী ভাতা</h1>
+					{/if}
+					{/each} -->
 
-					<div class="flex">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 24 24"
-							fill="currentColor"
-							class="w-6 h-6 text-lime-500"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-								clip-rule="evenodd"
-							/>
-						</svg>
-						<h1 class="ml-2">বয়স্ক ভাতা</h1>
-					</div>
+					
 				</div>
 			</div>
 		</div>
 
-		<!-- <div class="mt-8 flex space-x-5 ">
-			<div class="bg-white p-5 w-2/3 rounded-xl shadow-xl grid bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 text-white">
-				<h1 class="text-xs">পরবর্তী র‍্যাশন তারিখ</h1>
-
-				<h1 class="text-3xl font-bold">ডিসেম্বর ২০, ২০২৩</h1>
-			</div>
-
-			<div class="bg-white p-5 w-1/3 rounded-xl shadow-xl bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 text-white">
-				<h1 class="text-xs">পরবর্তী গুরুত্বপূর্ন দিবস</h1>
-
-				<h1 class="text-3xl font-bold">ডিসেম্বর ১৬, ২০২৩</h1>
-				<a href="" class="hover:text-orange-500 transition-all ease-in-out text-xs"
-					>বিস্তারিত জানুন</a
-				>
-			</div>
-		</div> -->
 
 		<div class="mt-8 flex space-x-5 h-1/2">
 			<div class="bg-white p-5 w-1/4 rounded-xl shadow-xl">
@@ -235,23 +184,7 @@
 							</div>
 						</li>
 
-						<li class="border-b mb-5 flex items-center">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 24 24"
-								fill="currentColor"
-								class="w-5 h-5 text-lime-500"
-							>
-								<path
-									d="M6 3a3 3 0 00-3 3v1.5a.75.75 0 001.5 0V6A1.5 1.5 0 016 4.5h1.5a.75.75 0 000-1.5H6zM16.5 3a.75.75 0 000 1.5H18A1.5 1.5 0 0119.5 6v1.5a.75.75 0 001.5 0V6a3 3 0 00-3-3h-1.5zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM4.5 16.5a.75.75 0 00-1.5 0V18a3 3 0 003 3h1.5a.75.75 0 000-1.5H6A1.5 1.5 0 014.5 18v-1.5zM21 16.5a.75.75 0 00-1.5 0V18a1.5 1.5 0 01-1.5 1.5h-1.5a.75.75 0 000 1.5H18a3 3 0 003-3v-1.5z"
-								/>
-							</svg>
-
-							<div>
-								<h1 class="text-xl ml-2">বয়স্ক ভাতার আবেদন</h1>
-								<h1 class="ml-2 text-xs">সম্পন্ন হয়েছে</h1>
-							</div>
-						</li>
+						
 					</ol>
 				</div>
 			</div>
