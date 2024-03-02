@@ -21,6 +21,7 @@ model users {
   bdate             String    @default("0000-00-00")
   vataboi           vataboi[]
   prof_pic String?
+  pass_strength String?
 }
 
 model vataboi {

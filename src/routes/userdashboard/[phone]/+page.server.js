@@ -10,6 +10,9 @@ export const load = ({params})=> {
             where: {
                 number: params.phone,
             },
+            include: {
+                vataboi: true,
+            }
         }),
         vata: prisma.vataboi.findUnique({
             where: {
