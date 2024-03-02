@@ -80,7 +80,7 @@
 								clip-rule="evenodd"
 							/>
 						</svg>
-						{#if data.user.prof_pic == ''}
+						{#if data.user.prof_pic == null}
 						<h1 class="ml-2">আপনার প্রোফাইল পিকচার আপলোড করুন</h1>
 						{:else}
 						<h1 class="ml-2">আপনার প্রোফাইল পিকচার আপলোড হয়েছে</h1>

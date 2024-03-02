@@ -53,8 +53,8 @@
 			</div>
 
 		</div>
-
-        <div class="mt-10 w-full h-1/4 flex flex-col items-center ">
+        {#if data.vataS != null}
+        <div class="mt-10 w-full h-1/4 flex flex-col items-center " id="vata-abedon">
             <div class=" w-full h-10">
                 <p class="text-lg font-bold">আপনার ভাতার আবেদনের অগ্রগতিঃ</p>
             </div>
@@ -131,15 +131,23 @@
                 {/if}
             </div>
         </div>
+        {/if}
 
     
-        <div class="w-full h-2/5 flex flex-col rounded-xl shadow-lg bg-slate-100">
+        <div class="w-full h-2/5 flex flex-col rounded-xl shadow-lg mt-5 bg-slate-100">
             <div class="w-full h-10 flex items-center ml-3">
                 <h1>আপনার পূর্ববর্তী ভাতাসমূহের অর্থ প্রাপ্তির তালিকাঃ</h1>
             </div>  
         </div>
 	</div>
 
+    <script>
+        if (data.vataS == "") {
+            document.getElementById('vata-abedon').style.display = "none" ;
+        }else {
+            document.getElementById('vata-abedon').style.display = "flex" ;
+        }
+    </script>
 
 	
 </div>

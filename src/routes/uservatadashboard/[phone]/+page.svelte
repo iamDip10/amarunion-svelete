@@ -4,7 +4,6 @@
 	import NAVBAR from '../../../UserDashboard/sidebar.svelte';
     export let data ;
 
-	console.log(data.vataS.status) ;
 </script>
 
 <main class="bg-slate-100">
