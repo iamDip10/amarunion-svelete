@@ -3,7 +3,7 @@
 	import Login from '../login/loginBg.svelte';
 </script>
 
-<main>
+<main class="">
 	<Login />
 
 	<div class="mt-56">

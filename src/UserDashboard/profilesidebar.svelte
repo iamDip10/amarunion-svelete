@@ -1,12 +1,12 @@
 <script>
-	import { readable } from 'svelte/store';
+    import { readable } from 'svelte/store';
     export let data;
     const ppic = '/src/img/'.concat(data.user.prof_pic) ;
 </script>
 
 
-    <div class="col-span-3 mt-9 w-full flex  justify-center items-center ">
-
+<div class="col-span-3 mt-9 w-full flex  justify-center items-center ">
+        
     
         <div class="p-20 flex flex-col items-center border-l border-orange-500 bg-white">
             <h1 class="mb-10">প্রোফাইল সারাংস</h1>
@@ -38,6 +38,7 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script>
             $('#prog').change(function() { 
+                console.log("Changing") ;
                 $('#picinp').submit();
                 var readr = new FileReader() ;
                 readr.onload = (e) => {
@@ -47,6 +48,7 @@
                 readr.readAsDataURL(this.files[0]) ;
             });
         </script>
+        
     
     </div>
 

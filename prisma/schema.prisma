@@ -22,6 +22,8 @@ model users {
   vataboi           vataboi[]
   prof_pic String?
   pass_strength String?
+  complaint complaintboi[]
+  nid_pic String?
 }
 
 model vataboi {
@@ -34,4 +36,19 @@ model vataboi {
   status String? @default("null")
   users   users  @relation(fields: [user_id], references: [number], onDelete: Cascade)
   type String?
+}
+
+model complaintboi {
+  complaintId String @id
+  user_id String @default("null")
+  pics String?
+  types String?
+  name String?
+  jela String?
+  address String?
+  number String?
+  extra String?
+  date String?
+  status String? @default("pending")
+  userfk users @relation(fields: [user_id], references: [number], onDelete: Cascade)
 }

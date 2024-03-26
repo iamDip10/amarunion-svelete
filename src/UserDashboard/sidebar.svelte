@@ -64,7 +64,7 @@
 						/>
 					</svg>
 
-					<h1>অভিযোগসমূহ</h1>
+					<a href="/usercomplaintdash/{data.user.number}">অভিযোগসমূহ</a>
 				</li>
 				<li class="flex space-x-3 mt-5 text-lg">
 					<svg
@@ -82,7 +82,7 @@
 						/>
 					</svg>
 
-					<h1>সেটিংস</h1>
+					<a href="/usersettings/{data.user.number}">সেটিংস</a> 
 				</li>
 				<li class="flex space-x-3 mt-10 text-lg">
 					<svg

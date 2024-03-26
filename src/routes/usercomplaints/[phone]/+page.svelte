@@ -1,14 +1,13 @@
 <script>
-
-	import VataDash from '../../../userVata/vataDash.svelte';
+	import Complaints from '../../../userComplaints/complaints.svelte';
 	import NAVBAR from '../../../UserDashboard/sidebar.svelte';
-    export let data ;
+	export let data;
 
 </script>
 
-<main class="bg-slate-100 ">
+<main class="bg-slate-100">
 	<div class="grid grid-cols-12 gap-x-20">
 		<NAVBAR {data}/>
-		<VataDash {data}/>
+		<Complaints {data}/>
 	</div>
 </main>

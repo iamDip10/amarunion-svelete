@@ -134,20 +134,17 @@
         {/if}
 
     
-        <div class="w-full h-2/5 flex flex-col rounded-xl shadow-lg mt-5 bg-slate-100">
-            <div class="w-full h-10 flex items-center ml-3">
+        <div class="w-full h-1/2 flex flex-col rounded-xl shadow-lg mt-5 bg-slate-100">
+            <div class="w-full h-10 flex flex-col justify-center ml-3 mt-3">
                 <h1>আপনার পূর্ববর্তী ভাতাসমূহের অর্থ প্রাপ্তির তালিকাঃ</h1>
+                <div class="w-full overscroll-none">
+
+                </div>
             </div>  
         </div>
 	</div>
 
-    <script>
-        if (data.vataS == "") {
-            document.getElementById('vata-abedon').style.display = "none" ;
-        }else {
-            document.getElementById('vata-abedon').style.display = "flex" ;
-        }
-    </script>
+    
 
 	
 </div>

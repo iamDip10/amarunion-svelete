@@ -62,7 +62,7 @@
 						<h1 class="ml-2">আপনার পাসওয়ার্ড শক্তিশালী</h1>
 						{:else if data.user.pass_strength == "medium"}
 						<h1 class="ml-2">আপনার পাসওয়ার্ড মধ্যমানের</h1>
-						{:else if data.user.pass_strength == 'weak'}
+						{:else if data.user.pass_strength == "weak"}
 						<h1 class="ml-2">আপনার পাসওয়ার্ড দুর্বল</h1>
 						{/if} 
 
