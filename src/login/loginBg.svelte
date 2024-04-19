@@ -11,7 +11,7 @@
 			</div>
 			<div class="w-full">
 				<h1 class="text-5xl font-bold">লগ-ইন</h1>
-				<h1 class="text-xs font-thin">আপনার এন আইডি নাম্বার এবং পাসওয়ার্ড দিয়ে লগ-ইন করুন</h1>
+				<h1 class="text-xs font-thin">আপনার মোবাইল নাম্বার এবং পাসওয়ার্ড দিয়ে লগ-ইন করুন</h1>
 			</div>
 		</div>
 
@@ -20,7 +20,7 @@
 				<input
 					type="text"
 					class="bg-transparent outline-none placeholder:text-white focus:border-orange-500 border-b w-full"
-					placeholder=" মোবাইল নাম্বার" name="phone_number"
+					placeholder="মোবাইল নাম্বার" name="phone_number"
 				/>
 
 				<input
