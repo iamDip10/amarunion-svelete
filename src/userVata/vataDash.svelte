@@ -5,9 +5,6 @@
 	const picc = '/src/img/'.concat(data.user.prof_pic) ;
     console.log(data.vataS.status) ;
 
-    function changekor() {
-        
-    }
 </script>
 
 <div class="col-span-9 mt-9 mb-10">
@@ -57,20 +54,15 @@
 			</div>
 
 		</div>
-        {#if data.vataS != null }
+        {#if data.vataS[0] != null }
         <div class="mt-10 w-full h-1/6 flex flex-col " id="vata-abedon">
             <div class=" w-full h-10 flex">
                 <p class="text-lg font-bold ">আপনার ভাতার আবেদনের অগ্রগতিঃ</p>
-                <select class="ml-5 h-8 w-[12rem]" name="vataselect" id="" on:change={changekor()}>
-                    <option value="">আবেদন নির্বাচন করুন</option>
-                    {#each data.vataS as v}
-                    <option value="{v.vataid}">{v.type}</option>
-                    {/each}
-                </select>
+                
             </div>
             <div class="w-5/6 h-1/2 mt-4 flex flex-col ">
                
-                {#if data.vataS.status === "hold"} 
+                {#if data.vataS[0].status === "hold" || data.vataS[0].status === "done" } 
                     <div class="w-1/2 flex">
                         <svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +79,7 @@
                         <h1>আপনার আবেদন গ্রহন করা হয়েছে</h1>
                     </div>
                 {/if}
-                {#if data.vataS.status === "done"}
+                {#if data.vataS[0].status === "done"}
                 <div class="w-1/2 flex">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -111,10 +103,17 @@
 
     
         <div class="w-full h-1/2 flex flex-col rounded-xl shadow-lg mt-5 bg-slate-100">
+            <h1>আপনার পূর্ববর্তী ভাতাসমূহের অর্থ প্রাপ্তির তালিকাঃ</h1>
             <div class="w-full h-10 flex flex-col justify-center ml-3 mt-3">
-                <h1>আপনার পূর্ববর্তী ভাতাসমূহের অর্থ প্রাপ্তির তালিকাঃ</h1>
-                <div class="w-full overflow-hidden">
-
+                <div class="w-full flex flex-col ">
+                    {#each data.vatatarikh as tarikh}
+                        <div class="w-[50rem] bg-white mt-10 px-8 flex h-[5rem] items-center rounded-2xl shadow-xl">
+                            <h1 class="w-1/3 text-xl">{tarikh.month}</h1>
+                            <h1 class="w-1/3 text-xl">{tarikh.money}</h1>
+                            <button class="w-[8rem] bg-green-400 h-[3rem] rounded-xl">টাকা তুলুন</button>
+                        </div>
+                        
+                    {/each}
                 </div>
             </div>  
         </div>

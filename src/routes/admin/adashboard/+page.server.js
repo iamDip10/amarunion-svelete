@@ -1,6 +1,6 @@
 import prisma from "../../../lib/prisma"
 
-
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 export const load = () => {
     return {
         comps: prisma.complaintboi.findMany({
@@ -26,11 +26,11 @@ export const actions = {
 
         let distri = value/count ;
 
-        await prisma.givevate.create({
+        await prisma.givevata.create({
             data: {
-                month: new Date().getMonth(),
+                month: month[new Date().getMonth()],
                 money: distri,
-
+                vata_id: "vata-01536105134-fighter",
             }
         })
 

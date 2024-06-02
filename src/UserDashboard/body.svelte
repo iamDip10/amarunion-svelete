@@ -136,6 +136,24 @@
 						
 						<h1 class="ml-2">প্রতিবন্ধী ভাতা</h1>
 					</div>
+					{:else if boi.type === 'old'}
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="w-6 h-6 text-lime-500"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+
+						
+						<h1 class="ml-2">বয়স্ক ভাতা</h1>
+					</div>
 					{/if}
 					{/each}
 
@@ -146,25 +164,6 @@
 
 
 		<div class="mt-8 flex space-x-5 h-1/2">
-			<div class="bg-white p-5 w-1/4 rounded-xl shadow-xl">
-				<h1 class="text-sm">পরিষদ নোটিস এবং নিউজসমূহ</h1>
-
-				<div class="h-full overflow-scroll">
-					<ol class="mt-10">
-						<li class="border-b mb-5">
-							<a href="" class="  ">
-								<h1 class="text-orange-500">নিউজ</h1>
-								<h1 class="text-md font-bold text-orange-500">
-									বাতাবী লেবুর বাম্পার ফলন । খুশি কৃষকেরা
-								</h1>
-								<h1 class="text-sm">ডিসেম্বর ১, ২০২৩</h1>
-							</a>
-						</li>
-
-						
-					</ol>
-				</div>
-			</div>
 
 			<div class="bg-white p-5 w-full rounded-xl shadow-xl">
 				<h1 class="text-xs">সাময়িক পেন্ডিং কাজসমূহ</h1>

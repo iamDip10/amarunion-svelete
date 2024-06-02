@@ -24,6 +24,7 @@ model users {
   pass_strength String?
   complaint complaintboi[]
   nid_pic String?
+  vatamoney givevata[]
 }
 
 model vataboi {
@@ -42,9 +43,11 @@ model vataboi {
 model givevata {
   vid Int @id @default(autoincrement())
   month String? 
-  money String?
+  money Int?
+  user_id String?
   vata_id String? @default("null")
   vatafk vataboi? @relation(fields:[vata_id], references: vataid, onDelete: Cascade )
+  user users? @relation(fields:[user_id], references: number, onDelete: Cascade)
 }
 
 model complaintboi {

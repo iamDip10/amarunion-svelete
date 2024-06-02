@@ -17,5 +17,13 @@ export const load = ({params}) => {
             },
     
         }),
+
+        vatatarikh: prisma.givevata.findMany({
+            where: {
+                user_id: {
+                    contains: params.number
+                },
+            },
+        })
     };
 }
