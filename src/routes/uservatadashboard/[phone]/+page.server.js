@@ -9,9 +9,11 @@ export const load = ({params}) => {
             },
         }),
 
-        vataS: prisma.vataboi.findUnique({
+        vataS: prisma.vataboi.findMany({
             where: {
-                vataid: "vata-".concat(params.phone),
+                vataid: {
+                    contains: "vata-".concat(params.phone)
+                }
             },
     
         }),

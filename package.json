@@ -27,6 +27,7 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "^5.9.1",
+		"caniuse-lite": "^1.0.30001621",
 		"chart.js": "^2.6.0",
 		"prisma": "^5.9.1"
 	}

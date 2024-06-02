@@ -36,6 +36,15 @@ model vataboi {
   status String? @default("null")
   users   users  @relation(fields: [user_id], references: [number], onDelete: Cascade)
   type String?
+  vatas givevata[]
+}
+
+model givevata {
+  vid Int @id @default(autoincrement())
+  month String? 
+  money String?
+  vata_id String? @default("null")
+  vatafk vataboi? @relation(fields:[vata_id], references: vataid, onDelete: Cascade )
 }
 
 model complaintboi {
@@ -52,3 +61,5 @@ model complaintboi {
   status String? @default("pending")
   userfk users @relation(fields: [user_id], references: [number], onDelete: Cascade)
 }
+
+

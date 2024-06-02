@@ -32,7 +32,7 @@ export const actions =  {
 
         await prisma.vataboi.create({
             data:{
-                vataid: "vata-".concat(user.number),
+                vataid: "vata-".concat(user.number).concat("-").concat(forms.get('vatatype')),
                 user_id: user.number,
                 mis_number: mis,
                 pics: filee.name,
